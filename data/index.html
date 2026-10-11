@@ -1,0 +1,22 @@
+let pantallaActual = 0;
+let imagenes = [];
+
+function preload() {
+  for (let i = 0; i <= 17; i++) {
+    let numero = nf(i, 2);  // convierte 0 en "00", 6 en "06", 15 en "15"
+    imagenes[i] = loadImage("data/pantalla-" + numero + ".png");
+  }
+}
+
+function setup() {
+  createCanvas(800, 450);
+}
+
+function draw() {
+  background(0);
+  mostrarPantalla(pantallaActual);
+}
+
+function mostrarPantalla(numero) {
+  image(imagenes[numero], 0, 0, width, height);
+}
